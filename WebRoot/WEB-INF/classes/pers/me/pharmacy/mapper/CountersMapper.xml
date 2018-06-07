@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.me.pharmacy.mapper.CountersMapper" >
+  <resultMap id="CountersMap" type="pers.me.pharmacy.bean.Counters" >
+    <id column="DC_no" property="dcNo" jdbcType="VARCHAR" />
+    <result column="DC_position" property="dcPosition" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  
+</mapper>

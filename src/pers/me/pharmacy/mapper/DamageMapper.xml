@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.me.pharmacy.mapper.DamageMapper" >
+  <resultMap id="DamageMap" type="pers.me.pharmacy.bean.Damage" >
+    <id column="Damage_no" property="damageNo" jdbcType="VARCHAR" />
+    <result column="Damage_quantity" property="damageQuantity" jdbcType="INTEGER" />
+    <result column="Damage_condition" property="damageCondition" jdbcType="VARCHAR" />
+    <result column="Damage_degree" property="damageDegree" jdbcType="LONGVARCHAR" />
+    <association property="dno" column="Dno">
+			<id property="dno" column="Dno" jdbcType="VARCHAR"/>
+			<result column="Dname" property="dname" jdbcType="VARCHAR"/>
+			<result column="Dclass" property="dclass" jdbcType="VARCHAR"/>
+			<result column="Dstandard" property="dstandard" jdbcType="VARCHAR"/>
+			<result column="Manufacture_date" property="manufactureDate" jdbcType="DATE"/>
+			<result column="Effective_date" property="effectiveDate" jdbcType="DATE"/>
+			<result column="Dbidd" property="dbidd" jdbcType="FLOAT"/>
+			<result column="Dprice" property="dprice" jdbcType="FLOAT"/>
+			<result column="Approve_no" property="approveNo" jdbcType="VARCHAR"/>
+			<result column="Country_no" property="countryNo" jdbcType="VARCHAR"/>
+		</association>
+  </resultMap>
+
+  
+</mapper>

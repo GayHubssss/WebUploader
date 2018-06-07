@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.me.pharmacy.mapper.ReturntMapper" >
+  <resultMap id="ReturntMap" type="pers.me.pharmacy.bean.Returnt" >
+    <id column="Rno" property="rno" jdbcType="VARCHAR" />
+    <result column="Rquantity" property="rquantity" jdbcType="INTEGER" />
+    <result column="Rdate" property="rdate" jdbcType="DATE" />
+    <result column="Rcondition" property="rcondition" jdbcType="VARCHAR" />
+    <result column="Rreason" property="rreason" jdbcType="LONGVARCHAR" />
+    <association property="ino" column="Ino">
+    	<id column="Ino" property="ino" jdbcType="VARCHAR"/>
+    	<result column="Sno" property="sno" jdbcType="VARCHAR"/>
+    	<result column="Dno" property="dno" jdbcType="VARCHAR"/>
+    	<result column="Iquantity" property="iquantity" jdbcType="INTEGER"/>
+    	<result column="Idate" property="idate" jdbcType="DATE"/>
+    	<result column="Icondition" property="icondition" jdbcType="VARCHAR"/>
+    </association>
+  </resultMap>
+  
+  
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.me.pharmacy.mapper.StorageMapper" >
+  <resultMap id="StorageMap" type="pers.me.pharmacy.bean.Storage" >
+    <result column="Dstorage" property="dstorage" jdbcType="INTEGER" />
+    <result column="DC_storage" property="dcStorage" jdbcType="INTEGER" />
+    <association property="dno" column="Dno">
+			<id property="dno" column="Dno" jdbcType="VARCHAR"/>
+			<result column="Dname" property="dname" jdbcType="VARCHAR"/>
+			<result column="Dclass" property="dclass" jdbcType="VARCHAR"/>
+			<result column="Dstandard" property="dstandard" jdbcType="VARCHAR"/>
+			<result column="Manufacture_date" property="manufactureDate" jdbcType="DATE"/>
+			<result column="Effective_date" property="effectiveDate" jdbcType="DATE"/>
+			<result column="Dbidd" property="dbidd" jdbcType="FLOAT"/>
+			<result column="Dprice" property="dprice" jdbcType="FLOAT"/>
+			<result column="Approve_no" property="approveNo" jdbcType="VARCHAR"/>
+			<result column="Country_no" property="countryNo" jdbcType="VARCHAR"/>
+		</association>
+		<association property="sdNo" column="SD_no">
+			<id column="SD_no" property="sdNo" jdbcType="VARCHAR"/>
+			<result column="SD_position" property="sdPosition" jdbcType="VARCHAR"/>
+		</association>
+		<association property="dcNo" column="DC_no">
+			<id column="DC_no" property="dcNo" jdbcType="VARCHAR"/>
+			<result column="DC_position" property="dcPosition" jdbcType="VARCHAR"/>
+		</association>
+  </resultMap>
+  
+</mapper>

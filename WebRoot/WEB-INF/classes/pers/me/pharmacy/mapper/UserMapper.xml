@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.me.pharmacy.mapper.UserMapper" >
+  <resultMap id="UserMap" type="pers.me.pharmacy.bean.User" >
+    <id column="Uno" property="uno" jdbcType="INTEGER" />
+    <result column="Uname" property="uname" jdbcType="VARCHAR" />
+    <result column="Upassword" property="upassword" jdbcType="VARCHAR" />
+    <result column="Isadmin" property="isadmin" jdbcType="VARCHAR"/>
+    <result column="Image" property="image" jdbcType="VARCHAR"/>
+  </resultMap>
+  
+  <select id="findByName" parameterType="String" resultMap="UserMap">
+  		<![CDATA[
+  			select * from user where Uname = #{0}
+  		]]>
+  </select>
+  
+  <update id="update" parameterType="User">
+  		update user 
+  		<trim prefix="set" suffixOverrides=",">
+  		 <if test="upassword!=null">Upassword=#{upassword},</if>
+  		 <if test="isadmin!=null">Isadmin=#{isadmin},</if>
+  		 <if test="image!=null">Image=#{image},</if>
+  		 </trim>
+  		where Uno = #{uno}
+  </update>
+</mapper>

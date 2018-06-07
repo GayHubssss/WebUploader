@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.me.pharmacy.mapper.SupplierMapper" >
+  <resultMap id="SupplierMap" type="pers.me.pharmacy.bean.Supplier" >
+    <id column="Sno" property="sno" jdbcType="VARCHAR" />
+    <result column="Sname" property="sname" jdbcType="VARCHAR" />
+    <result column="Saddress" property="saddress" jdbcType="VARCHAR" />
+    <result column="Sphone" property="sphone" jdbcType="CHAR" />
+    <result column="Sinter" property="sinter" jdbcType="VARCHAR" />
+    <result column="Smail" property="smail" jdbcType="VARCHAR" />
+  </resultMap>
+  
+</mapper>
